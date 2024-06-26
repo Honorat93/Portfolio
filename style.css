@@ -125,7 +125,7 @@ nav ul li a:hover::after
     font-weight: 500;
     cursor: pointer;
     position: relative;
-    transition: 0.5s; /* Ajout de la règle de transition */
+    transition: 0.5s; 
 }
 
 .tab-links::after {
@@ -136,7 +136,7 @@ nav ul li a:hover::after
     position: absolute;
     left: 0;
     bottom: -8px;
-    transition: 0.5s; /* Ajout de la règle de transition */
+    transition: 0.5s; 
 }
 
 .tab-links.active-link::after {

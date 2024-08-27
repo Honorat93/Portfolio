@@ -233,7 +233,7 @@ nav ul li a:hover::after
 
 .work img{
     width : 100%;
-    height: auto;
+    height: 100%;
     border-radius: 10px;
     display: block;
     transition: transform 0.5s;
@@ -439,7 +439,3 @@ html
     display: block;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}

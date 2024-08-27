@@ -219,6 +219,7 @@ nav ul li a:hover::after
 }
 .work-list{
     display: grid;
+    height: 60%;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 40px;
     margin-top: 50px;
@@ -232,10 +233,11 @@ nav ul li a:hover::after
 
 .work img{
     width : 100%;
-    height: 100%;
+    height: 70%;
     border-radius: 10px;
     display: block;
     transition: transform 0.5s;
+    object-fit: contain;
 }
 .layer {
     width: 100%;
@@ -437,3 +439,7 @@ html
     display: block;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}

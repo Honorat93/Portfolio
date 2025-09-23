@@ -174,27 +174,33 @@ nav ul li a:hover::after
     margin-top: 50px;
 }
 
-.services-list div{
+.services-list .service-item{
     background : #262626;
     padding: 40px;
     font-size: 13px;
     font-weight: 300;
     border-radius: 10px;
-   transition: background 0.5s, transform 0.5s;
-
+    transition: all 0.5s ease;
+    /* Amélioration pour les performances sur mobile */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    /* Pour éviter les problèmes de superposition */
+    position: relative;
+    z-index: 1;
 }
-.services-list div i{
+
+.services-list .service-item i{
     font-size: 50px;
     margin-bottom: 30px;
 }
 
-.services-list div h2{
+.services-list .service-item h2{
     font-size: 30px;
     font-weight: 500;
     margin-bottom: 15px;
 
 }
-.services-list div a{
+.services-list .service-item a{
     text-decoration: none;
     color: #fff;
     font-size: 12px;
@@ -202,9 +208,21 @@ nav ul li a:hover::after
     display: inline-block;
 }
 
-.services-list div:hover{
+/* Animation au survol pour desktop */
+.services-list .service-item:hover{
     background: #ff004f;
     transform: translateY(-10px);
+    /* Augmenter le z-index pour s'assurer que l'élément soit au-dessus */
+    z-index: 2;
+}
+
+/* Animation pour mobile - utilisation de :active et :focus */
+.services-list .service-item:active,
+.services-list .service-item:focus {
+    background: #ff004f;
+    transform: translateY(-5px);
+    outline: none; /* Supprimer le contour par défaut */
+    z-index: 2;
 }
 
 .margin-top {
@@ -405,7 +423,7 @@ nav .fa-solid{
     }
     .sub-title
     {
-        font-size: 40%;
+        font-size: 40px; /* Correction : 40% n'est pas valide, utilisation de px */
     }
     .about-col-1, .about-col-2{
         flex-basis: 100%;
@@ -428,6 +446,19 @@ nav .fa-solid{
         font-size: 14px;
     }
 
+    /* Corrections spécifiques pour les animations sur mobile */
+    .services-list {
+        grid-gap: 20px; 
+    }
+    
+    .services-list .service-item {
+        padding: 20px;
+    }
+    
+    .services-list .service-item:active,
+    .services-list .service-item:focus {
+        transform: translateY(-3px); 
+    }
 }
 html
 {
@@ -439,4 +470,3 @@ html
     margin-top: -40px;
     display: block;
 }
-
